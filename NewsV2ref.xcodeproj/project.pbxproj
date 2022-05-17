@@ -20,6 +20,8 @@
 		606D8B3A2833C40C00692C44 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D8B392833C40C00692C44 /* HomePresenter.swift */; };
 		606D8B3C2833C42F00692C44 /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D8B3B2833C42F00692C44 /* HomeContract.swift */; };
 		606D8B3E2833C4A600692C44 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D8B3D2833C4A600692C44 /* NewsModel.swift */; };
+		606D8B402833C9B700692C44 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D8B3F2833C9B700692C44 /* UIButton+Extension.swift */; };
+		606D8B422833D1CF00692C44 /* NewsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D8B412833D1CF00692C44 /* NewsCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		606D8B392833C40C00692C44 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		606D8B3B2833C42F00692C44 /* HomeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContract.swift; sourceTree = "<group>"; };
 		606D8B3D2833C4A600692C44 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		606D8B3F2833C9B700692C44 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		606D8B412833D1CF00692C44 /* NewsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategory.swift; sourceTree = "<group>"; };
 		A306421E3EA907A191A061E5 /* Pods_NewsV2ref.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsV2ref.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E3E74ABC8E28419B34EB3F /* Pods-NewsV2ref.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsV2ref.release.xcconfig"; path = "Target Support Files/Pods-NewsV2ref/Pods-NewsV2ref.release.xcconfig"; sourceTree = "<group>"; };
 		C144394E454BB4771BC42E34 /* Pods-NewsV2ref.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsV2ref.debug.xcconfig"; path = "Target Support Files/Pods-NewsV2ref/Pods-NewsV2ref.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,7 +92,6 @@
 				606D8B202833AB4900692C44 /* Network */,
 				606D8B1F2833AB4200692C44 /* Models */,
 				606D8B1E2833AB2E00692C44 /* Modules */,
-				606D8B362833C33F00692C44 /* cell */,
 				606D8B1D2833AAF000692C44 /* Utils */,
 			);
 			path = NewsV2ref;
@@ -119,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				606D8B3D2833C4A600692C44 /* NewsModel.swift */,
+				606D8B412833D1CF00692C44 /* NewsCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				606D8B2B2833AD2C00692C44 /* UIColor+Extension.swift */,
+				606D8B3F2833C9B700692C44 /* UIButton+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 				606D8B312833AE4000692C44 /* HomeViewController.swift */,
 				606D8B392833C40C00692C44 /* HomePresenter.swift */,
 				606D8B3B2833C42F00692C44 /* HomeContract.swift */,
+				606D8B362833C33F00692C44 /* cell */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -282,10 +288,12 @@
 				606D8B3C2833C42F00692C44 /* HomeContract.swift in Sources */,
 				606D8B2C2833AD2C00692C44 /* UIColor+Extension.swift in Sources */,
 				606D8B0A2833AA3100692C44 /* AppDelegate.swift in Sources */,
+				606D8B402833C9B700692C44 /* UIButton+Extension.swift in Sources */,
 				606D8B352833C2B800692C44 /* CollectionNewsCell.swift in Sources */,
 				606D8B3E2833C4A600692C44 /* NewsModel.swift in Sources */,
 				606D8B382833C3E300692C44 /* NetworkManager.swift in Sources */,
 				606D8B0C2833AA3100692C44 /* SceneDelegate.swift in Sources */,
+				606D8B422833D1CF00692C44 /* NewsCategory.swift in Sources */,
 				606D8B322833AE4000692C44 /* HomeViewController.swift in Sources */,
 				606D8B272833ACC600692C44 /* MainViewController.swift in Sources */,
 				606D8B3A2833C40C00692C44 /* HomePresenter.swift in Sources */,
