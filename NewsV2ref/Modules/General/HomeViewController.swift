@@ -10,6 +10,10 @@ import SnapKit
 
 class HomeViewController: MainViewController {
     
+    var presenter: HomeViewPresenterProtocol?
+    var networkManager = NetworkManager()
+
+    
    fileprivate lazy var collectionNews: UICollectionView =  {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -23,7 +27,13 @@ class HomeViewController: MainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "main"
+        title = "Welcome !"
+        
+        
+        presenter?.set()
+        presenter?.geet()
+
+
         configureView()
     }
     
@@ -52,6 +62,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         cell.backgroundColor = .black
         return cell
+    }
+    
+    
+}
+extension HomeViewController: HomeViewProtocol {
+    func succes() {
+        print("succes")
+    }
+    
+    func failure() {
+        print("failure")
+
     }
     
     
