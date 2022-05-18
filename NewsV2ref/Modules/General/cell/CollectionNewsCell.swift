@@ -29,16 +29,16 @@ class CollectionNewsCell: UICollectionViewCell {
         return label
     }()
     
-     let showInBrowserButton = UIButton(title: "Show in browser", backgroundColor: .orange, titleColor: .white, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
+     let showInBrowserButton     = UIButton(title: "Show in browser", backgroundColor: .mainBackgroundColor(), titleColor: .black, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
     
-     let showInApplicationButton = UIButton(title: "Show in Application", backgroundColor: .orange, titleColor: .white, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
+     let showInApplicationButton = UIButton(title: "Show in Application", backgroundColor: .mainBackgroundColor(), titleColor: .black, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .gray
-        setupView()
         addSubviews()
         activateConstraints()
+
     }
     
     override func prepareForReuse() {
@@ -50,11 +50,7 @@ class CollectionNewsCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - Setup view
-    private func setupView() {
-        
-    }
+
     // MARK: - AddSubviews
     private func addSubviews() {
         addSubview(imageView)
@@ -70,6 +66,7 @@ class CollectionNewsCell: UICollectionViewCell {
         self.imageView.af.setImage(withURL: url)
 
     }
+
     // MARK: - Constraints
     fileprivate func activateConstraints() {
         imageView.snp.makeConstraints { make in

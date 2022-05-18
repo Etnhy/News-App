@@ -20,7 +20,3 @@ struct Article: Decodable {
 struct APIResponse: Decodable {
     let articles: [Article]
 }
-
-//enum CodingKeys: String, CodingKey {
-//    case author, title, description, url, urlToImage, publishedAt, content
-//}

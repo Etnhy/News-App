@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-import Alamofire
+import SafariServices
 
 class HomeViewController: MainViewController {
     
@@ -38,7 +38,7 @@ class HomeViewController: MainViewController {
         collectionNews.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.trailing.equalTo(view)
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalTo(view)
         }
     }
 }
@@ -56,9 +56,17 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return UICollectionViewCell()
         }
         cell.configureCell(with: cellModel[indexPath.item])
+         let url = URL(string: cellModel[indexPath.item].url)
+
+        cell.showInApplicationButton.addTarget(self, action: #selector(showInAppAction), for: .touchUpInside)
+        cell.showInBrowserButton.addTarget(self, action: #selector(showInBrowserAction), for: .touchUpInside)
+
         return cell
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print(indexPath.item)
+    }
     
 }
 extension HomeViewController: HomeViewProtocol {
@@ -67,7 +75,16 @@ extension HomeViewController: HomeViewProtocol {
         self.collectionNews.reloadData()
     }
     
-    func failure(error: AFError) {
+    func failure(error: Error) {
         print(error)
+    }
+}
+
+extension HomeViewController {
+    @objc func showInBrowserAction() {
+        print("browser")
+    }
+    @objc func showInAppAction() {
+        print("browser")
     }
 }

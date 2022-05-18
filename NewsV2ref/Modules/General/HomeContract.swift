@@ -10,7 +10,7 @@ import Alamofire
 
 protocol HomeViewProtocol: AnyObject {
     func succes(items: [HomeCellModel])
-    func failure(error: AFError)
+    func failure(error: Error)
 }
 protocol HomeViewPresenterProtocol: AnyObject { //, networkManager: NetworkManager
     init(view: HomeViewProtocol, networkManager: NetworkManager)
