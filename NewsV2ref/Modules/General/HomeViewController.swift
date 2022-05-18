@@ -27,9 +27,7 @@ class HomeViewController: MainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Welcome !"
-        
-        
+        title = "Welcome !"        
         presenter?.set()
         presenter?.geet()
 

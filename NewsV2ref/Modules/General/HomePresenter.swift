@@ -27,7 +27,10 @@ class HomePresenter: HomeViewPresenterProtocol {
         print("seeet good conditioin")
     }
     func geet() {
-            networkManager?.geet()
+        networkManager?.getNews(complition: { response in
+            print(response)
+        })
+        print("wor")
     }
 
 }
