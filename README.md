@@ -1,4 +1,4 @@
-# NewsV2ref
+# News Apps
 News Apps 
 
 Architecture used: Model View Present (MVP)
