@@ -436,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C144394E454BB4771BC42E34 /* Pods-NewsV2ref.debug.xcconfig */;
 			buildSettings = {
+				API_KEY = 3b7a57f2d0e3400e9193cd86f1ba0fb5;
 				API_NEWS = "https://newsapi.org/v2/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -466,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9E3E74ABC8E28419B34EB3F /* Pods-NewsV2ref.release.xcconfig */;
 			buildSettings = {
+				API_KEY = 3b7a57f2d0e3400e9193cd86f1ba0fb5;
 				API_NEWS = "https://newsapi.org/v2/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

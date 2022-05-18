@@ -16,6 +16,11 @@ struct Configuration {
             }
             return "\(api)"
         }()
-
+        static let apiKey: String = {
+            guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "api_key") as? String else {
+                fatalError()
+            }
+            return "&apiKey=\(apiKey)"
+        }()
     }
 }
