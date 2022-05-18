@@ -1,7 +1,12 @@
 # NewsV2ref
-приложение просмотра новостей
+News Apps 
 
-надо добавить :
+Architecture used: Model View Present (MVP)
+Pods used: SnapKit,
+            Alamofire,
+            AlamofireImage. 
 
+
+In Work:
 show - browser/app view
-date
+date label
