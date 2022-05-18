@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .mainBackgroundColor()
         // Do any additional setup after loading the view.
+        setupView()
     }
     
     fileprivate func setupView() {
@@ -21,7 +22,7 @@ class MainViewController: UIViewController {
         navBarAppearence.configureWithOpaqueBackground()
         navBarAppearence.titleTextAttributes      = [.foregroundColor: UIColor.white]
         navBarAppearence.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearence.backgroundColor = .cyan
+        navBarAppearence.backgroundColor = .clear
         navigationController?.navigationBar.standardAppearance   = navBarAppearence
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearence
     }

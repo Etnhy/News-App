@@ -7,18 +7,18 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class HomeViewController: MainViewController {
     
     var presenter: HomeViewPresenterProtocol?
-    var networkManager = NetworkManager()
+    var cellModel      = [HomeCellModel]()
 
     
    fileprivate lazy var collectionNews: UICollectionView =  {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         var view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor = .yellow
         view.dataSource = self
         view.delegate = self
         view.register(CollectionNewsCell.self, forCellWithReuseIdentifier: CollectionNewsCell.identifier)
@@ -27,13 +27,10 @@ class HomeViewController: MainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Welcome !"        
-        presenter?.set()
-        presenter?.geet()
-
-
+        title = "Welcome !"
         configureView()
     }
+    
     
     fileprivate func configureView() {
         view.addSubview(collectionNews)
@@ -48,7 +45,7 @@ class HomeViewController: MainViewController {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return cellModel.count
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return.init(width: self.view.frame.size.width, height: 300)
@@ -58,21 +55,19 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionNewsCell.identifier, for: indexPath) as? CollectionNewsCell else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .black
+        cell.configureCell(with: cellModel[indexPath.item])
         return cell
     }
     
     
 }
 extension HomeViewController: HomeViewProtocol {
-    func succes() {
-        print("succes")
+    func succes(items: [HomeCellModel]) {
+        self.cellModel = items
+        self.collectionNews.reloadData()
     }
     
-    func failure() {
-        print("failure")
-
+    func failure(error: AFError) {
+        print(error)
     }
-    
-    
 }

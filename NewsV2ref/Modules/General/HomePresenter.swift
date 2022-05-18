@@ -8,29 +8,38 @@
 import Foundation
 
 class HomePresenter: HomeViewPresenterProtocol {
-
-    
-
-    var items: [Article]?
     
     weak var view: HomeViewProtocol?
     weak var networkManager: NetworkManager?
-    //, networkManager: NetworkManager
+    
+    var items: [HomeCellModel]?
+    
     required init(view: HomeViewProtocol, networkManager: NetworkManager) {
         self.view = view
         self.networkManager = networkManager
+        set()
     }
- 
+    
     
     
     func set() {
-        print("seeet good conditioin")
-    }
-    func geet() {
-        networkManager?.getNews(complition: { response in
-            print(response)
+        networkManager?.getNews(complition: { result in
+            DispatchQueue.main.async { [unowned self] in
+                switch result {
+                case .success(let succes):
+                    self.items = succes.articles.compactMap({
+                        HomeCellModel(image: $0.urlToImage!,
+                                      content: $0.title!,
+                                      date: $0.publishedAt!,
+                                      url: $0.url!) })
+                    guard let items = items else { return }
+                    self.view?.succes(items: items)
+                case .failure(let error):
+                    self.view?.failure(error: error)
+                }
+            }
         })
-        print("wor")
     }
-
+    
+    
 }

@@ -6,32 +6,45 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class CollectionNewsCell: UICollectionViewCell {
     
     static let identifier = "CollectionNewsCell"
     
+    var urlStringForBrowser = ""
+    
     let imageView: UIImageView = {
        var view = UIImageView()
-        view.backgroundColor = .orange
+        view.backgroundColor = .clear
         return view
     }()
     
     let contentText: UILabel = {
        var label = UILabel()
-        label.backgroundColor = .blue
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.backgroundColor = .clear
         return label
     }()
     
-    let showInBrowserButton = UIButton(title: "Show in browser", backgroundColor: .orange, titleColor: .white, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
+     let showInBrowserButton = UIButton(title: "Show in browser", backgroundColor: .orange, titleColor: .white, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
     
-    let showInApplicationButton = UIButton(title: "Show in Application", backgroundColor: .orange, titleColor: .white, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
+     let showInApplicationButton = UIButton(title: "Show in Application", backgroundColor: .orange, titleColor: .white, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .gray
         setupView()
         addSubviews()
         activateConstraints()
+    }
+    
+    override func prepareForReuse() {
+        self.imageView.image     = nil
+        self.contentText.text    = nil
+        self.urlStringForBrowser = ""
     }
     
     required init?(coder: NSCoder) {
@@ -50,8 +63,15 @@ class CollectionNewsCell: UICollectionViewCell {
         addSubview(showInApplicationButton)
     }
     
+    func configureCell(with cellModel: HomeCellModel) {
+        self.contentText.text = cellModel.content
+        self.urlStringForBrowser = cellModel.url
+        guard let url = URL(string: cellModel.image) else {return}
+        self.imageView.af.setImage(withURL: url)
+
+    }
     // MARK: - Constraints
-    private func activateConstraints() {
+    fileprivate func activateConstraints() {
         imageView.snp.makeConstraints { make in
             make.top.equalTo(self).offset(10)
             make.leading.equalTo(self).offset(20)
