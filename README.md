@@ -2,6 +2,7 @@
 News Apps 
 
 Architecture used: Model View Present (MVP)
+
 Pods used: SnapKit,
             Alamofire,
             AlamofireImage. 
