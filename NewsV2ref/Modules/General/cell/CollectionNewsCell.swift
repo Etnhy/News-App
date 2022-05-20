@@ -69,7 +69,7 @@ class CollectionNewsCell: UICollectionViewCell {
         self.urlStringForBrowser = cellModel.url
         guard let url = URL(string: cellModel.image) else {return}
         self.imageView.af.setImage(withURL: url)
-
+        self.dateLabel.text = cellModel.date
     }
 
     // MARK: - Constraints
