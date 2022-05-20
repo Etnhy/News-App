@@ -29,7 +29,6 @@ class CollectionNewsCell: UICollectionViewCell {
         return label
     }()
     
-     let showInBrowserButton     = UIButton(title: "Show in browser", backgroundColor: .mainBackgroundColor(), titleColor: .black, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
     
      let showInApplicationButton = UIButton(title: "Show in Application", backgroundColor: .mainBackgroundColor(), titleColor: .black, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
     
@@ -55,7 +54,6 @@ class CollectionNewsCell: UICollectionViewCell {
     private func addSubviews() {
         addSubview(imageView)
         addSubview(contentText)
-        addSubview(showInBrowserButton)
         addSubview(showInApplicationButton)
     }
     
@@ -81,17 +79,10 @@ class CollectionNewsCell: UICollectionViewCell {
             make.trailing.equalTo(self).offset(-10)
             make.height.equalTo(80)
         }
-        showInBrowserButton.snp.makeConstraints { make in
-            make.top.equalTo(contentText.snp.bottom).offset(6)
 
-            make.bottom.equalTo(self).offset(-6)
-            make.leading.equalTo(self).offset(10)
-            make.width.equalTo((self.frame.size.width / 2) - 30)
-
-        }
         showInApplicationButton.snp.makeConstraints { make in
             make.top.equalTo(contentText.snp.bottom).offset(6)
-            make.trailing.equalTo(self).offset(-10)
+            make.centerX.equalTo(contentText)
             make.bottom.equalTo(self).offset(-6)
             make.width.equalTo((self.frame.size.width / 2) - 30)
 

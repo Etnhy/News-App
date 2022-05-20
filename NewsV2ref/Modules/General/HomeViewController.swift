@@ -27,7 +27,7 @@ class HomeViewController: MainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Welcome !"
+        title = "News !"
         configureView()
     }
     
@@ -56,14 +56,17 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return UICollectionViewCell()
         }
         cell.configureCell(with: cellModel[indexPath.item])
-         let url = URL(string: cellModel[indexPath.item].url)
-
+        
         cell.showInApplicationButton.addTarget(self, action: #selector(showInAppAction), for: .touchUpInside)
-        cell.showInBrowserButton.addTarget(self, action: #selector(showInBrowserAction), for: .touchUpInside)
 
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let url = URL(string: cellModel[indexPath.item].url)
+       let safari = SFSafariViewController(url: url!)
+        navigationController?.present(safari, animated: true)
+
         
         print(indexPath.item)
     }
@@ -81,10 +84,9 @@ extension HomeViewController: HomeViewProtocol {
 }
 
 extension HomeViewController {
-    @objc func showInBrowserAction() {
-        print("browser")
-    }
+
     @objc func showInAppAction() {
-        print("browser")
+        let inApp = InAppNewsViewController()
+        navigationController?.pushViewController(inApp, animated:  true)
     }
 }

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		325547FA172426978FE95AAA /* Pods_NewsV2ref.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A306421E3EA907A191A061E5 /* Pods_NewsV2ref.framework */; };
+		6029545E2837BB4100B20893 /* InAppNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6029545D2837BB4100B20893 /* InAppNewsViewController.swift */; };
+		602954612837BD5A00B20893 /* InAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602954602837BD5900B20893 /* InAppPresenter.swift */; };
+		602954632837BD6200B20893 /* InAppContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602954622837BD6200B20893 /* InAppContract.swift */; };
+		602954662837BD7D00B20893 /* InAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602954652837BD7D00B20893 /* InAppModel.swift */; };
 		606D8B0A2833AA3100692C44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D8B092833AA3100692C44 /* AppDelegate.swift */; };
 		606D8B0C2833AA3100692C44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D8B0B2833AA3100692C44 /* SceneDelegate.swift */; };
 		606D8B132833AA3400692C44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606D8B122833AA3400692C44 /* Assets.xcassets */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6029545D2837BB4100B20893 /* InAppNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppNewsViewController.swift; sourceTree = "<group>"; };
+		602954602837BD5900B20893 /* InAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPresenter.swift; sourceTree = "<group>"; };
+		602954622837BD6200B20893 /* InAppContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppContract.swift; sourceTree = "<group>"; };
+		602954652837BD7D00B20893 /* InAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppModel.swift; sourceTree = "<group>"; };
 		606D8B062833AA3100692C44 /* NewsV2ref.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsV2ref.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606D8B092833AA3100692C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		606D8B0B2833AA3100692C44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +77,25 @@
 				A9E3E74ABC8E28419B34EB3F /* Pods-NewsV2ref.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6029545F2837BB4D00B20893 /* InAppView */ = {
+			isa = PBXGroup;
+			children = (
+				602954642837BD7000B20893 /* model */,
+				6029545D2837BB4100B20893 /* InAppNewsViewController.swift */,
+				602954602837BD5900B20893 /* InAppPresenter.swift */,
+				602954622837BD6200B20893 /* InAppContract.swift */,
+			);
+			path = InAppView;
+			sourceTree = "<group>";
+		};
+		602954642837BD7000B20893 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				602954652837BD7D00B20893 /* InAppModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		606D8AFD2833AA3100692C44 = {
@@ -118,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				606D8B2E2833ADC800692C44 /* General */,
+				6029545F2837BB4D00B20893 /* InAppView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -293,7 +321,9 @@
 			files = (
 				606D8B3C2833C42F00692C44 /* HomeContract.swift in Sources */,
 				606D8B2C2833AD2C00692C44 /* UIColor+Extension.swift in Sources */,
+				6029545E2837BB4100B20893 /* InAppNewsViewController.swift in Sources */,
 				606D8B0A2833AA3100692C44 /* AppDelegate.swift in Sources */,
+				602954632837BD6200B20893 /* InAppContract.swift in Sources */,
 				606D8B402833C9B700692C44 /* UIButton+Extension.swift in Sources */,
 				6077BE7C28353A110049E9A2 /* HomeCellModel.swift in Sources */,
 				606D8B352833C2B800692C44 /* CollectionNewsCell.swift in Sources */,
@@ -305,6 +335,8 @@
 				606D8B322833AE4000692C44 /* HomeViewController.swift in Sources */,
 				606D8B272833ACC600692C44 /* MainViewController.swift in Sources */,
 				606D8B3A2833C40C00692C44 /* HomePresenter.swift in Sources */,
+				602954662837BD7D00B20893 /* InAppModel.swift in Sources */,
+				602954612837BD5A00B20893 /* InAppPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
