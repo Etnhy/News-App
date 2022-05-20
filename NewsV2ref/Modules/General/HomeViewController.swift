@@ -87,6 +87,9 @@ extension HomeViewController {
 
     @objc func showInAppAction() {
         let inApp = InAppNewsViewController()
+        let networkManager = NetworkManager()
+        let presenter = InAppPresenter(view: inApp, networkManager: networkManager)
+        inApp.preenter = presenter
         navigationController?.pushViewController(inApp, animated:  true)
     }
 }

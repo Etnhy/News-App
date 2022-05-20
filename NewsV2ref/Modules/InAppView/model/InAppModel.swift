@@ -9,6 +9,10 @@ import Foundation
 
 
 struct InAppModel {
+    
     var title: String
     var image: String
+    var content: String
+    var date: String
+    var author: String
 }

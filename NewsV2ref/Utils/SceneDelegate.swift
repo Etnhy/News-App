@@ -19,10 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-//        self.presenter = HomePresenter(view: self,networkManager: networkManager)
-
-        
-        
         
         let startPage = HomeViewController()
         let presenter = HomePresenter(view: startPage, networkManager: networkManager)

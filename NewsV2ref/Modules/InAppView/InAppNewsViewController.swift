@@ -8,10 +8,11 @@
 import UIKit
 
 class InAppNewsViewController: MainViewController {
+    
+    weak var preenter: InAppViewPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -26,4 +27,15 @@ class InAppNewsViewController: MainViewController {
     }
     */
 
+}
+extension InAppNewsViewController: InAppViewProtocol {
+    func succes(items: [InAppModel]) {
+        //
+    }
+    
+    func failure(error: Error) {
+        //
+    }
+    
+    
 }

@@ -32,6 +32,12 @@ class CollectionNewsCell: UICollectionViewCell {
     
      let showInApplicationButton = UIButton(title: "Show in Application", backgroundColor: .mainBackgroundColor(), titleColor: .black, tintColor: .white, font: nil, isShadow: true, cornerRadius: 4)
     
+    let dateLabel: UILabel = {
+        var label = UILabel()
+        label.text = "q123321"
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .gray
@@ -55,6 +61,7 @@ class CollectionNewsCell: UICollectionViewCell {
         addSubview(imageView)
         addSubview(contentText)
         addSubview(showInApplicationButton)
+        addSubview(dateLabel)
     }
     
     func configureCell(with cellModel: HomeCellModel) {
@@ -77,16 +84,18 @@ class CollectionNewsCell: UICollectionViewCell {
             make.top.equalTo(imageView.snp.bottom).offset(3)
             make.leading.equalTo(self).offset(10)
             make.trailing.equalTo(self).offset(-10)
-            make.height.equalTo(80)
+            make.height.equalTo(70)
         }
 
         showInApplicationButton.snp.makeConstraints { make in
-            make.top.equalTo(contentText.snp.bottom).offset(6)
-            make.centerX.equalTo(contentText)
-            make.bottom.equalTo(self).offset(-6)
+            make.trailing.equalTo(self).offset(-16)
+            make.centerY.equalTo(dateLabel)
             make.width.equalTo((self.frame.size.width / 2) - 30)
-
-            
+            make.height.equalTo(30)
+        }
+        dateLabel.snp.makeConstraints { make in
+            make.leading.equalTo(self).offset(16)
+            make.top.equalTo(contentText.snp.bottom).offset(6)
         }
     }
     
