@@ -24,6 +24,11 @@ class HomeViewController: MainViewController {
         view.register(CollectionNewsCell.self, forCellWithReuseIdentifier: CollectionNewsCell.identifier)
         return view
     }()
+    
+    fileprivate let categorys: CategoryButtons = {
+       var buttons = CategoryButtons()
+        return buttons
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +39,16 @@ class HomeViewController: MainViewController {
     
     fileprivate func configureView() {
         view.addSubview(collectionNews)
+        view.addSubview(categorys)
+        
+        categorys.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.equalTo(view)
+            make.height.equalTo(50)
+        }
         
         collectionNews.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(categorys.snp.bottom)
             make.leading.trailing.equalTo(view)
             make.bottom.equalTo(view)
         }
