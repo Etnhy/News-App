@@ -7,6 +7,4 @@ Pods used: SnapKit,
             AlamofireImage. 
 
 
-In Work:
-show - browser/app view
-date label
+![news](https://user-images.githubusercontent.com/91971233/170868145-693f0c37-6e3e-4439-87dd-abee0a5e79e6.gif)
